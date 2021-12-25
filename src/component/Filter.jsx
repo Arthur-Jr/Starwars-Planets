@@ -8,10 +8,10 @@ function Filter() {
   const {
     filters, setFilter, columnOptions, modifyColumnOptions } = useContext(PlanetContext);
   const { filterByNumericValues, filterByName: { name: inputName } } = filters;
-  const [comparisonOptions] = useState(['maior que', 'igual a', 'menor que']);
+  const [comparisonOptions] = useState(['Greater', 'Equal', 'Lesser']);
   const [columnFilter, setColumnFilter] = useState({
     column: 'population',
-    comparison: 'maior que',
+    comparison: 'Greater',
     value: '',
   });
 

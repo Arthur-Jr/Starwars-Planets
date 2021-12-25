@@ -25,15 +25,15 @@ function PlanetProvider({ children }) {
     let filtredPlanets = [...data];
     filters.filterByNumericValues.forEach(({ comparison, column, value }) => {
       switch (comparison) {
-      case 'maior que':
+      case 'Greater':
         filtredPlanets = [...filtredPlanets
           .filter((planet) => parseInt(planet[column], 10) > parseInt(value, 10))];
         break;
-      case 'igual a':
+      case 'Equal':
         filtredPlanets = [...filtredPlanets
           .filter((planet) => parseInt(planet[column], 10) === parseInt(value, 10))];
         break;
-      case 'menor que':
+      case 'Lesser':
         filtredPlanets = [...filtredPlanets
           .filter((planet) => parseInt(planet[column], 10) < parseInt(value, 10))];
         break;
