@@ -1,8 +1,11 @@
 import React, { useContext } from 'react';
 import PlanetContext from '../context/PlanetContext';
+import capitalizeString from '../globalFuncs/capitalizeString';
 
 function TableBody() {
   const { planets } = useContext(PlanetContext);
+  const CLIMATE_INDEX = 4;
+  const TERRAIND_INDEX = 6;
 
   return (
     <tbody>
@@ -19,7 +22,8 @@ function TableBody() {
                 key={ index2 }
                 data-testid={ index2 === 0 ? 'planet-name' : 'infos' }
               >
-                { value }
+                { index2 === CLIMATE_INDEX
+                || index2 === TERRAIND_INDEX ? capitalizeString(value) : value }
               </td>
             ))}
           </tr>
