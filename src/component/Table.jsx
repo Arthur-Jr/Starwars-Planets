@@ -15,10 +15,6 @@ function Table() {
           <th>Terrain</th>
           <th>Surfacer Water</th>
           <th>Population</th>
-          <th>Films</th>
-          <th>Created</th>
-          <th>Edited</th>
-          <th>URL</th>
         </tr>
       </thead>
       <TableBody />
