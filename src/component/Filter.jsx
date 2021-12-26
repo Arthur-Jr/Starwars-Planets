@@ -52,17 +52,16 @@ function Filter() {
 
   return (
     <header>
-
+      <Input
+        placeHolder="Search"
+        type="text"
+        name="search-name"
+        id="search-name"
+        testId="name-filter"
+        handleChange={ handleNameFilter }
+        value={ inputName }
+      />
       <form onSubmit={ handleSubmit }>
-        <Input
-          placeHolder="Search"
-          type="text"
-          name="search-name"
-          id="search-name"
-          testId="name-filter"
-          handleChange={ handleNameFilter }
-          value={ inputName }
-        />
         <Select
           name="column"
           testId="column-filter"
