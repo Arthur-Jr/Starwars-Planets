@@ -21,7 +21,7 @@ function SelectedFilters() {
   };
 
   return (
-    <div>
+    <div className="selectedFilters-section">
       {filterByNumericValues.map(({ column }, index) => (
         <div key={ index } data-testid="filter">
           <span>{ column }</span>

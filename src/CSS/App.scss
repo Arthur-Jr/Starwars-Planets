@@ -10,6 +10,7 @@ $max-width: 100%;
 
 @import './header';
 @import './table';
+@import './footer';
 
 * {
   box-sizing: border-box;
@@ -19,7 +20,13 @@ $max-width: 100%;
 }
 
 .page-main {
+  background-color: $header-bgColor;
   height: 100%;
-  width: 100%;
   min-height: 100%;
+  width: 100%;
+}
+
+.main-section {
+  background-color: $header-bgColor;
+  height: 100%;
 }

@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import PlanetContext from '../context/PlanetContext';
 import Table from '../component/Table';
 import Filter from '../component/Filter';
+import Footer from '../component/Footer';
 import SelectedFilters from '../component/SelectedFilters';
 
 function Main() {
@@ -26,9 +27,12 @@ function Main() {
 
   return (
     <main className="page-main">
-      <Filter />
-      <SelectedFilters />
-      <Table />
+      <section className="main-section">
+        <Filter />
+        <SelectedFilters />
+        <Table />
+      </section>
+      <Footer />
     </main>
   );
 }
