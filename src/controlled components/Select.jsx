@@ -2,11 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import removeUnderline from '../globalFuncs/RemoveUnderline';
 
-function Select({ name, testId, handleChange, options, text }) {
+function Select({ name, testId, handleChange, options, text, value }) {
   return (
     <label htmlFor={ name }>
       {`${text}: `}
-      <select name={ name } id={ name } data-testid={ testId } onChange={ handleChange }>
+      <select
+        value={ value }
+        name={ name }
+        id={ name }
+        data-testid={ testId }
+        onChange={ handleChange }
+      >
         {options.map((option, index) => (
           <option key={ index } value={ option }>{ removeUnderline(option) }</option>
         ))}
@@ -17,6 +23,8 @@ function Select({ name, testId, handleChange, options, text }) {
 
 Select.defaultProps = {
   testId: '',
+  options: [],
+  value: '',
 };
 
 Select.propTypes = {
@@ -24,7 +32,8 @@ Select.propTypes = {
   testId: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
-  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  options: PropTypes.arrayOf(PropTypes.string),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default Select;

@@ -5,6 +5,11 @@ import sortFunc from '../globalFuncs/SortFunc';
 
 function PlanetProvider({ children }) {
   const [data, setData] = useState([]);
+  const [columnFilter, setColumnFilter] = useState({
+    column: 'population',
+    comparison: 'Greater',
+    value: '',
+  });
   const [filters, setFilter] = useState({
     filterByName: {
       name: '',
@@ -64,7 +69,9 @@ function PlanetProvider({ children }) {
           planets,
           setPlanets,
           columnOptions,
-          modifyColumnOptions }
+          modifyColumnOptions,
+          columnFilter,
+          setColumnFilter }
       }
     >
       {children}

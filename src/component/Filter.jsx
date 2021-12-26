@@ -6,14 +6,15 @@ import Sort from './Sort';
 
 function Filter() {
   const {
-    filters, setFilter, columnOptions, modifyColumnOptions } = useContext(PlanetContext);
+    filters,
+    setFilter,
+    columnOptions,
+    modifyColumnOptions,
+    columnFilter,
+    setColumnFilter,
+  } = useContext(PlanetContext);
   const { filterByNumericValues, filterByName: { name: inputName } } = filters;
   const [comparisonOptions] = useState(['Greater', 'Equal', 'Lesser']);
-  const [columnFilter, setColumnFilter] = useState({
-    column: 'population',
-    comparison: 'Greater',
-    value: '',
-  });
 
   const handleChange = ({ target: { value, name } }) => {
     setColumnFilter({
@@ -36,6 +37,7 @@ function Filter() {
     newColumns.splice(newColumns.indexOf(columnFilter.column), 1);
     modifyColumnOptions(newColumns);
     setColumnFilter({ ...columnFilter, column: newColumns[0], value: '' });
+    console.log(newColumns);
   };
 
   const handleSubmit = (e) => {
@@ -71,6 +73,7 @@ function Filter() {
           options={ columnOptions }
           text="Column Filter"
           handleChange={ handleChange }
+          value={ columnFilter.column }
         />
         <Select
           name="comparison"
@@ -78,6 +81,7 @@ function Filter() {
           options={ comparisonOptions }
           text="Comparison Filter"
           handleChange={ handleChange }
+          value={ columnFilter.comparison }
         />
         <Input
           placeHolder="Set a value"

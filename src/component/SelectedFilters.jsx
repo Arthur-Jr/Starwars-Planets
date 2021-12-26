@@ -9,6 +9,8 @@ function SelectedFilters() {
     setFilter,
     columnOptions,
     modifyColumnOptions,
+    columnFilter,
+    setColumnFilter,
   } = useContext(PlanetContext);
 
   const handleClick = (column) => {
@@ -18,6 +20,12 @@ function SelectedFilters() {
       ...filters,
       filterByNumericValues: newFiltredArray,
     });
+    if (columnOptions.length === 0) {
+      setColumnFilter({
+        ...columnFilter,
+        column,
+      });
+    }
     modifyColumnOptions([...columnOptions, column]);
   };
 

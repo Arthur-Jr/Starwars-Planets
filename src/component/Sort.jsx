@@ -40,6 +40,7 @@ function Sort() {
         options={ [...string, ...number] }
         text="Sort Options"
         handleChange={ handleChange }
+        value={ selectedSort.column }
       />
       <section className="radio-section">
         <Input
