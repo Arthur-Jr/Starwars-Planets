@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Input({ placeHolder, type, handleChange, name, testId, min, value, id, text }) {
+function Input({ placeHolder, type,
+  handleChange, name, testId, min, value, id, text, max }) {
   return (
     <label htmlFor={ id }>
-      {text}
       <input
         type={ type }
         onChange={ handleChange }
@@ -14,7 +14,9 @@ function Input({ placeHolder, type, handleChange, name, testId, min, value, id, 
         placeholder={ placeHolder }
         min={ min }
         value={ value }
+        max={ max }
       />
+      {text}
     </label>
   );
 }
@@ -24,6 +26,7 @@ Input.defaultProps = {
   min: 0,
   text: '',
   placeHolder: '',
+  max: 0,
 };
 
 Input.propTypes = {
@@ -36,6 +39,7 @@ Input.propTypes = {
   value: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   placeHolder: PropTypes.string,
+  max: PropTypes.number,
 };
 
 export default Input;

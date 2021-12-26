@@ -6,14 +6,15 @@ import Sort from './Sort';
 
 function Filter() {
   const {
-    filters, setFilter, columnOptions, modifyColumnOptions } = useContext(PlanetContext);
+    filters,
+    setFilter,
+    columnOptions,
+    modifyColumnOptions,
+    columnFilter,
+    setColumnFilter,
+  } = useContext(PlanetContext);
   const { filterByNumericValues, filterByName: { name: inputName } } = filters;
   const [comparisonOptions] = useState(['Greater', 'Equal', 'Lesser']);
-  const [columnFilter, setColumnFilter] = useState({
-    column: 'population',
-    comparison: 'Greater',
-    value: '',
-  });
 
   const handleChange = ({ target: { value, name } }) => {
     setColumnFilter({
@@ -36,6 +37,7 @@ function Filter() {
     newColumns.splice(newColumns.indexOf(columnFilter.column), 1);
     modifyColumnOptions(newColumns);
     setColumnFilter({ ...columnFilter, column: newColumns[0], value: '' });
+    console.log(newColumns);
   };
 
   const handleSubmit = (e) => {
@@ -51,9 +53,9 @@ function Filter() {
   };
 
   return (
-    <header>
-
-      <form onSubmit={ handleSubmit }>
+    <header className="header">
+      <h1 className="title">Planet Finder</h1>
+      <section className="textFilter-section">
         <Input
           placeHolder="Search"
           type="text"
@@ -63,12 +65,15 @@ function Filter() {
           handleChange={ handleNameFilter }
           value={ inputName }
         />
+      </section>
+      <form onSubmit={ handleSubmit } className="filter-form">
         <Select
           name="column"
           testId="column-filter"
           options={ columnOptions }
           text="Column Filter"
           handleChange={ handleChange }
+          value={ columnFilter.column }
         />
         <Select
           name="comparison"
@@ -76,6 +81,7 @@ function Filter() {
           options={ comparisonOptions }
           text="Comparison Filter"
           handleChange={ handleChange }
+          value={ columnFilter.comparison }
         />
         <Input
           placeHolder="Set a value"
@@ -85,18 +91,20 @@ function Filter() {
           testId="value-filter"
           handleChange={ handleChange }
           value={ columnFilter.value }
+          max={ 1000000000000 }
         />
         <button
           type="submit"
           data-testid="button-filter"
-          disabled={ columnOptions.length === 0 }
+          disabled={ columnOptions.length === 0 || columnFilter.value.length === 0 }
+          className="form-button"
         >
           Search
         </button>
       </form>
-      <div>
+      <section className="sort-section">
         <Sort />
-      </div>
+      </section>
     </header>
   );
 }

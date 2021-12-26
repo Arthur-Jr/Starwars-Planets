@@ -1,0 +1,26 @@
+table {
+  background-color: $main-bgColor;
+  border-collapse: collapse;
+  color: white;
+  width: 100%;
+  thead {
+    tr {
+      background-color: rgb(1, 38, 56);
+      height: 60px;
+      th {
+        font-size: 1.2em;
+      }
+    }
+  }
+  tbody {
+    tr {
+      height: 120px;
+      td {
+        font-size: 1,1em;
+        font-style: italic;
+        text-align: center;
+        width: 11%;
+      }
+    }
+  }
+}

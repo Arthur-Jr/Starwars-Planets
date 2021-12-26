@@ -1,0 +1,75 @@
+$white-color: white;
+$main-bgColor: rgb(0, 59, 89);
+$max-width: 100%;
+
+@mixin flex($direction, $align, $justify) {
+  align-items: $align;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
+
+@import './header';
+@import './table';
+@import './footer';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.page-main {
+  background-color: $main-bgColor;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+}
+
+.main-section {
+
+  @include flex(column, inherit, inherit);
+
+  background-color: $main-bgColor;
+  height: 100%;
+}
+
+.selectedFilters-section {
+  
+  @include flex(row, center, center);
+
+  align-self: center;
+  background-image: url('../Images/background-img.jpg');
+  width: 100%;
+  font-size: 1em;
+  padding: {
+    top: 8px;
+    bottom: 8px;
+  };
+  .filter-container {
+    background-color: $main-bgColor;
+    border-radius: 20px;
+    color: $white-color;
+    font-weight: 900;
+    margin: 0 {
+      right: 2%;
+    };
+    padding: 8px;
+    span {
+      margin: {
+        right: 5px;  
+      };
+    };
+    button {
+      background-color: inherit;
+      border: none;
+      color: red;
+      font-size: 1.2em;
+      font-weight: bolder;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

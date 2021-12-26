@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PlanetContext from '../context/PlanetContext';
+import removeUnderline from '../globalFuncs/RemoveUnderline';
 
 function SelectedFilters() {
   const {
@@ -8,6 +9,8 @@ function SelectedFilters() {
     setFilter,
     columnOptions,
     modifyColumnOptions,
+    columnFilter,
+    setColumnFilter,
   } = useContext(PlanetContext);
 
   const handleClick = (column) => {
@@ -17,14 +20,20 @@ function SelectedFilters() {
       ...filters,
       filterByNumericValues: newFiltredArray,
     });
+    if (columnOptions.length === 0) {
+      setColumnFilter({
+        ...columnFilter,
+        column,
+      });
+    }
     modifyColumnOptions([...columnOptions, column]);
   };
 
   return (
-    <div>
+    <div className="selectedFilters-section">
       {filterByNumericValues.map(({ column }, index) => (
-        <div key={ index } data-testid="filter">
-          <span>{ column }</span>
+        <div key={ index } data-testid="filter" className="filter-container">
+          <span>{ removeUnderline(column) }</span>
           <button type="button" onClick={ () => handleClick(column) }>X</button>
         </div>
       ))}

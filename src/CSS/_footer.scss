@@ -1,0 +1,27 @@
+.main-footer {
+
+  @include flex(row, center, center);
+
+  background-image: url('../Images/background-img.jpg');
+  bottom: 0;
+  color: white;
+  height: 2px;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  button {
+    background-color: inherit;
+    border: none;
+    font-style: italic;
+    font-weight: 900;
+    margin-right: 15px;
+    &:hover {
+      cursor: pointer;
+    }
+    img {
+      color: white;
+      height: 30px;
+      width: 30px;
+    }
+  }
+}
