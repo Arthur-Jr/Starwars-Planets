@@ -96,7 +96,7 @@ function Filter() {
         <button
           type="submit"
           data-testid="button-filter"
-          disabled={ columnOptions.length === 0 }
+          disabled={ columnOptions.length === 0 || columnFilter.value.length === 0 }
           className="form-button"
         >
           Search
