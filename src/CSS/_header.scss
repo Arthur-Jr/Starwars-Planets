@@ -7,7 +7,7 @@ $border-radius: 15px;
   font-size: 0.9em;
   font-weight: 900;
   height: 32px;
-  width: 18%;
+  width: 20%;
   letter-spacing: 0.3px;
   &:hover {
     cursor: pointer;
@@ -23,6 +23,12 @@ $border-radius: 15px;
   color: $white-color;
   padding: 15px 0;
   text-align: center;
+
+  .title {
+    font-size: 2em;
+    font-style: italic;
+  }
+
   .textFilter-section {
     padding: 10px 0 7px;
     width: $max-width;
@@ -34,6 +40,7 @@ $border-radius: 15px;
       text-align: center;
     }
   }
+
   .filter-form {
 
     @include flex(row, center, space-around);
@@ -42,17 +49,20 @@ $border-radius: 15px;
     font-weight: 900;
     padding: 0 0 10px;
     width: $max-width - 30%;
+ 
     select {
       background-color: $white-color;
       border-radius: 10px;
       font-size: 0.8em;
       padding: 5px;
     }
+
     input {
       border-radius: 10px;
       font-size: 0.8em;
       padding: 5px;
     }
+
     .form-button {
       @include formButton();
     }
@@ -62,41 +72,64 @@ $border-radius: 15px;
     @include flex(row, center, center);
 
     width: $max-width;
+
     .sort-form {
 
-      @include flex(row, center, space-around);
+      @include flex(row, center, center);
 
       font-size: 1.1em;
       font-weight: 900;
       width: $max-width - 60%;
+
       select {
         background-color: $white-color;
         border-radius: 10px;
         font-size: 0.7em;
         padding: 4px;
       }
+
+      label {
+        
+        @include flex(column, center, center);
+
+        margin: {
+          right: 3px;
+        };
+      }
+
       input {
         font-size: 0.8em;
         padding: 5px;
       }
+
       .radio-section {
 
-        @include flex(row, center, space-around);
+        @include flex(row, center, center);
 
-        width: $max-width - 75%;
+        width: $max-width - 70%;
 
-        input {
+        label {
           margin: {
-            right: 3px;
+            right: 10%;
           };
         }
+
+        input {
+          border: 0;
+          margin: {
+            right: 2px;
+          };
+          height: 15px;
+          width: 15px;
+        }
       }
+
       .form-button {
 
         @include formButton();
 
         font-size: 0.8;
-        width: 15%;
+        width: 20%;
       }
     }
   }

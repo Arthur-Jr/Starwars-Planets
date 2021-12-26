@@ -54,7 +54,7 @@ function Filter() {
 
   return (
     <header className="header">
-      <h1>Planet Finder</h1>
+      <h1 className="title">Planet Finder</h1>
       <section className="textFilter-section">
         <Input
           placeHolder="Search"
