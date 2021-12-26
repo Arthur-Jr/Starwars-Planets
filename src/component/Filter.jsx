@@ -51,17 +51,20 @@ function Filter() {
   };
 
   return (
-    <header>
-      <Input
-        placeHolder="Search"
-        type="text"
-        name="search-name"
-        id="search-name"
-        testId="name-filter"
-        handleChange={ handleNameFilter }
-        value={ inputName }
-      />
-      <form onSubmit={ handleSubmit }>
+    <header className="header">
+      <h1>Planet Finder</h1>
+      <section className="textFilter-section">
+        <Input
+          placeHolder="Search"
+          type="text"
+          name="search-name"
+          id="search-name"
+          testId="name-filter"
+          handleChange={ handleNameFilter }
+          value={ inputName }
+        />
+      </section>
+      <form onSubmit={ handleSubmit } className="filter-form">
         <Select
           name="column"
           testId="column-filter"
@@ -84,18 +87,20 @@ function Filter() {
           testId="value-filter"
           handleChange={ handleChange }
           value={ columnFilter.value }
+          max={ 1000000000000 }
         />
         <button
           type="submit"
           data-testid="button-filter"
           disabled={ columnOptions.length === 0 }
+          className="form-button"
         >
           Search
         </button>
       </form>
-      <div>
+      <section className="sort-section">
         <Sort />
-      </div>
+      </section>
     </header>
   );
 }

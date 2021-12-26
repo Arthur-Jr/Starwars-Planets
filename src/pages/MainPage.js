@@ -25,11 +25,11 @@ function Main() {
   }, [setData]);
 
   return (
-    <>
+    <main className="page-main">
       <Filter />
       <SelectedFilters />
       <Table />
-    </>
+    </main>
   );
 }
 

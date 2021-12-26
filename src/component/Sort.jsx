@@ -33,7 +33,7 @@ function Sort() {
   const { string, number } = sortOptions;
 
   return (
-    <form onSubmit={ handleSubmit }>
+    <form onSubmit={ handleSubmit } className="sort-form">
       <Select
         name="column"
         testId="column-sort"
@@ -41,25 +41,33 @@ function Sort() {
         text="Sort Options"
         handleChange={ handleChange }
       />
-      <Input
-        text="Ascendant"
-        type="radio"
-        name="sort"
-        testId="column-sort-input-asc"
-        value="ASC"
-        id="asc"
-        handleChange={ handleChange }
-      />
-      <Input
-        text="Descendant"
-        type="radio"
-        name="sort"
-        testId="column-sort-input-desc"
-        value="DESC"
-        id="des"
-        handleChange={ handleChange }
-      />
-      <button type="submit" data-testid="column-sort-button">Sort</button>
+      <section className="radio-section">
+        <Input
+          text="Asc"
+          type="radio"
+          name="sort"
+          testId="column-sort-input-asc"
+          value="ASC"
+          id="asc"
+          handleChange={ handleChange }
+        />
+        <Input
+          text="Desc"
+          type="radio"
+          name="sort"
+          testId="column-sort-input-desc"
+          value="DESC"
+          id="des"
+          handleChange={ handleChange }
+        />
+      </section>
+      <button
+        type="submit"
+        data-testid="column-sort-button"
+        className="form-button"
+      >
+        Sort
+      </button>
     </form>
   );
 }
