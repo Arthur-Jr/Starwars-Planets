@@ -1,9 +1,8 @@
-$header-bgColor: rgb(0, 59, 89);
 $border-radius: 15px;
 
 @mixin formButton {
   background-color: whitesmoke;
-  border: double $header-bgColor 2px;
+  border: double $main-bgColor 2px;
   border-radius: $border-radius;
   font-size: 0.9em;
   font-weight: 900;
