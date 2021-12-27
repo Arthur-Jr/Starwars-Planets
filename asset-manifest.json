@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/starwars-planet-finder/static/css/main.95b95f30.chunk.css",
+    "main.js": "/starwars-planet-finder/static/js/main.6ad27557.chunk.js",
+    "main.js.map": "/starwars-planet-finder/static/js/main.6ad27557.chunk.js.map",
+    "runtime-main.js": "/starwars-planet-finder/static/js/runtime-main.68e0b9d6.js",
+    "runtime-main.js.map": "/starwars-planet-finder/static/js/runtime-main.68e0b9d6.js.map",
+    "static/js/2.97282e9a.chunk.js": "/starwars-planet-finder/static/js/2.97282e9a.chunk.js",
+    "static/js/2.97282e9a.chunk.js.map": "/starwars-planet-finder/static/js/2.97282e9a.chunk.js.map",
+    "index.html": "/starwars-planet-finder/index.html",
+    "precache-manifest.888a47432adc73d46e72f43184dd24be.js": "/starwars-planet-finder/precache-manifest.888a47432adc73d46e72f43184dd24be.js",
+    "service-worker.js": "/starwars-planet-finder/service-worker.js",
+    "static/css/main.95b95f30.chunk.css.map": "/starwars-planet-finder/static/css/main.95b95f30.chunk.css.map",
+    "static/js/2.97282e9a.chunk.js.LICENSE.txt": "/starwars-planet-finder/static/js/2.97282e9a.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/starwars-planet-finder/static/media/background-img.922ab2ca.jpg",
+    "static/media/gitHubIcon.svg": "/starwars-planet-finder/static/media/gitHubIcon.f25d8a38.svg",
+    "static/media/linkedinIcon.svg": "/starwars-planet-finder/static/media/linkedinIcon.65220039.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.68e0b9d6.js",
+    "static/js/2.97282e9a.chunk.js",
+    "static/css/main.95b95f30.chunk.css",
+    "static/js/main.6ad27557.chunk.js"
+  ]
+}
