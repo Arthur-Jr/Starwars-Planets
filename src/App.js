@@ -8,7 +8,7 @@ function App() {
   return (
     <PlanetProvider>
       <Switch>
-        <Route path="/planetfinder" component={ Main } />
+        <Route path="/starwars-planet-finder" component={ Main } />
       </Switch>
     </PlanetProvider>
   );
