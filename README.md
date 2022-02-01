@@ -31,6 +31,28 @@ Neste projeto, foi utilizado:
   * CSS3;
   * Sass.
 
+## Instalando Dependências
+
+Na raiz do projeto:
+```bash
+npm install
+``` 
+
+## Executando aplicação
+
+Na raiz do projeto:
+```bash
+npm start
+``` 
+
+## Executando Testes
+
+* Para rodar todos os testes:
+
+  ```
+    npm test
+  ```
+
 ---
 
 <h3>Projeto criado pela <a href="https://www.betrybe.com/">Trybe</a></h3>
