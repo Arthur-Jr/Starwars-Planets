@@ -33,6 +33,10 @@ Neste projeto, foi utilizado:
 
 ## Instalando Dependências
 
+Clone o repositório:
+
+```git clone git@github.com:Arthur-Jr/starwars-planet-finder.git```
+
 Na raiz do projeto:
 ```bash
 npm install
